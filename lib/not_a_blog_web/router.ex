@@ -14,7 +14,7 @@ defmodule NotABlogWeb.Router do
   end
 
   scope "/", NotABlogWeb do
-    pipe_through [:browser, :auth]
+    pipe_through [:browser]
 
     resources("/sessions", SessionController)
     resources("/posts", PostController)
