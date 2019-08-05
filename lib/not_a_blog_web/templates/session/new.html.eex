@@ -1,1 +1,21 @@
-<button class="btn btn-primary">new</button>
+<div class="wrapper fade-in-down">
+  <div id="form-content">
+    <div class="fade-in first">
+      <img src="<%= static_path(@conn, "/images/user.svg") %>" id="icon"></img>
+    </div>
+
+    <form>
+      <input type="text" id="login" class="fade-in second" name="login" placeholder="login">
+      <input type="text" id="password" class="fade-in third" name="login" placeholder="password">
+      <input type="submit" class="fade-in fourth" value="Log In">
+    </form>
+
+    <div id="form-footer">
+      <a class="underline-hover" href="#">Forgot Password?</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
