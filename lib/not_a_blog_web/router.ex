@@ -9,18 +9,14 @@ defmodule NotABlogWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
+  pipeline :auth do
+    plug(NotABlog.Auth.AuthAccessPipeline)
   end
 
   scope "/", NotABlogWeb do
-    pipe_through :browser
+    pipe_through [:browser, :auth]
 
-    get "/", PageController, :index
+    resources("/sessions", SessionController)
+    resources("/posts", PostController)
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", NotABlogWeb do
-  #   pipe_through :api
-  # end
 end

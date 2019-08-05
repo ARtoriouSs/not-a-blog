@@ -1,4 +1,4 @@
-defmodule NotABlogWeb.PageController do
+defmodule NotABlogWeb.PostController do
   use NotABlogWeb, :controller
 
   def index(conn, _params) do

@@ -22,8 +22,8 @@ defmodule NotABlogWeb do
       use Phoenix.Controller, namespace: NotABlogWeb
 
       import Plug.Conn
+      import NotABlogWeb.Router.Helpers
       import NotABlogWeb.Gettext
-      alias NotABlogWeb.Router.Helpers, as: Routes
     end
   end
 

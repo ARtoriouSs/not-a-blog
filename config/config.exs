@@ -13,7 +13,7 @@ config :not_a_blog,
 # Configures the endpoint
 config :not_a_blog, NotABlogWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "yImsmY8Ng1WbTefHbTb35GELX3qnQqiVl16GRJuoy2TV6kbNwuZ1VFS2zG9ejSfW",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: NotABlogWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: NotABlog.PubSub, adapter: Phoenix.PubSub.PG2]
 
@@ -24,6 +24,15 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# Configures Guardian
+config :not_a_blog, NotABlog.Auth.Guardian,
+  issuer: ":not_a_blog",
+  secret_key: System.get_env("SECRET_KEY_BASE")
+
+config :not_a_blog, NotABlog.Auth.AuthAccessPipeline,
+  module: NotABlog.Auth.Guardian,
+  error_handler: NotABlog.Auth.AuthErrorHandler
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
