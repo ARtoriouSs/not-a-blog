@@ -5,15 +5,15 @@ defmodule NotABlog.Accounts.User do
   schema "users" do
     field :name, :string
     field :password_hash, :string
-    field :role, :integer
+    field :password, :string, virtual: true
 
     timestamps()
   end
 
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :role])
-    |> validate_required([:name, :role])
+    |> cast(attrs, [:name])
+    |> validate_required([:name])
     |> validate_length(:name, min: 3, max: 20)
     |> unique_constraint(:name)
     |> put_password_hash()
@@ -21,8 +21,8 @@ defmodule NotABlog.Accounts.User do
 
   def auth_changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :password, :role])
-    |> validate_required([:name, :password, :role])
+    |> cast(attrs, [:name, :password])
+    |> validate_required([:name, :password])
     |> validate_length(:name, min: 3, max: 20)
     |> validate_length(:password, min: 6)
     |> unique_constraint(:name)
@@ -32,7 +32,9 @@ defmodule NotABlog.Accounts.User do
   defp put_password_hash(changeset) do
     case changeset do
       %Ecto.Changeset{valid?: true, changes: %{password: password}} ->
-        put_change(changeset, :password_hash, Comeonin.Bcrypt.hashpwsalt(password))
+        changeset
+        |> put_change(:password_hash, Comeonin.Bcrypt.hashpwsalt(password))
+        |> delete_change(:password)
       _ ->
         changeset
     end

@@ -34,6 +34,10 @@ config :not_a_blog, NotABlog.Auth.AuthAccessPipeline,
   module: NotABlog.Auth.Guardian,
   error_handler: NotABlog.Auth.AuthErrorHandler
 
+config :not_a_blog, NotABlog.Auth.SessionAccessPipeline,
+  module: NotABlog.Auth.Guardian,
+  error_handler: NotABlog.Auth.SessionErrorHandler
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

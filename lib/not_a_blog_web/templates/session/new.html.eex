@@ -4,7 +4,7 @@
       <img src="<%= static_path(@conn, "/images/user.svg") %>" id="icon"></img>
     </div>
 
-    <%= form_for @conn, session_path(@conn, :create), fn form -> %>
+    <%= form_for :session, session_path(@conn, :create), fn form -> %>
       <%= text_input form, :name, [class: "fade-in second", placeholder: "username"] %>
       <%= text_input form, :password, [type: :password, class: "fade-in third", placeholder: "password"] %>
       <%= submit "Log in", [class: "fade-in fourth"] %>

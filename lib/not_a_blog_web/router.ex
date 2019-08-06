@@ -9,14 +9,22 @@ defmodule NotABlogWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :auth do
-    plug(NotABlog.Auth.AuthAccessPipeline)
+  pipeline :authentication_check do
+    plug NotABlog.Auth.AuthAccessPipeline
   end
 
   scope "/", NotABlogWeb do
-    pipe_through [:browser, :auth]
+    pipe_through [:browser]
 
     resources("/sessions", SessionController, only: [:new, :create, :delete])
-    resources("/posts", PostController)
+
+    scope "/posts" do
+      pipe_through :authentication_check
+      resources "/", PostController, except: [:index, :show]
+    end
+
+    scope "/posts" do
+      resources("/", PostController, only: [:index, :show])
+    end
   end
 end
