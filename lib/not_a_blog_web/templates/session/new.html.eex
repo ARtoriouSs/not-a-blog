@@ -4,11 +4,11 @@
       <img src="<%= static_path(@conn, "/images/user.svg") %>" id="icon"></img>
     </div>
 
-    <form>
-      <input type="text" id="login" class="fade-in second" name="login" placeholder="login">
-      <input type="text" id="password" class="fade-in third" name="login" placeholder="password">
-      <input type="submit" class="fade-in fourth" value="Log In">
-    </form>
+    <%= form_for @conn, session_path(@conn, :create), fn form -> %>
+      <%= text_input form, :name, [class: "fade-in second", placeholder: "username"] %>
+      <%= text_input form, :password, [type: :password, class: "fade-in third", placeholder: "password"] %>
+      <%= submit "Log in", [class: "fade-in fourth"] %>
+    <% end %>
 
     <div id="form-footer">
       <a class="underline-hover" href="#">Forgot Password?</a>
