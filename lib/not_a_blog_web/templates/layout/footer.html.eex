@@ -1,28 +1,25 @@
-  <footer class="page-footer text-center text-md-left pt-4">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <h5 class="text-uppercase font-weight-bold mb-4">Footer Content</h5>
-          <p>
-            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-          </p>
-        </div>
-        <div class="col-md-2 mx-auto">
-          <h5 class="text-uppercase font-weight-bold mb-4">Profile</h5>
-          <ul class="list-unstyled">
-            <li><a href="https://github.com/ARtoriouSs">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/alexander-teslovskiy-4b7a25164/">linkedIn</a></li>
-          </ul>
-        </div>
-        <div class="col-md-2 mx-auto">
-          <h5 class="text-uppercase font-weight-bold mb-4">Social</h5>
-          <ul class="list-unstyled">
-            <li><a href="https://t.me/six_layer_cactus">Telegram</a></li>
-            <li><a href="https://www.instagram.com/teslovskii">Instagram</a></li>
-            <li><a href="https://vk.com/im">Vk</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
+<div class="row justify-content-around">
+  <div class="col-md-3">
+    <h5 class="text-uppercase font-weight-bold mb-4">Footer Content</h5>
+    <p>
+      Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    </p>
+  </div>
+
+  <div class="col-md-2">
+    <h5 class="text-uppercase font-weight-bold mb-4">Profile</h5>
+    <ul class="list-unstyled">
+      <li><a href="https://github.com/ARtoriouSs">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/alexander-teslovskiy-4b7a25164/">linkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="col-md-2">
+    <h5 class="text-uppercase font-weight-bold mb-4">Social</h5>
+    <ul class="list-unstyled">
+      <li><a href="https://t.me/six_layer_cactus">Telegram</a></li>
+      <li><a href="https://www.instagram.com/teslovskii">Instagram</a></li>
+      <li><a href="https://vk.com/im">Vk</a></li>
+    </ul>
+  </div>
+</div>
