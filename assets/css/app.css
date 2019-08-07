@@ -1,6 +1,7 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/font-awesome/css/font-awesome.css";
 @import "./phoenix.css";
+@import "./post.css";
 @import "./session.css";
 
 body {
@@ -43,4 +44,8 @@ hr {
 
 *:focus {
   outline: none;
+}
+
+.help-block {
+  margin: 0;
 }

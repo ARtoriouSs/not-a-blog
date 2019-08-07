@@ -1,0 +1,16 @@
+.title-input {
+  width: 99% !important;
+  background-color: white !important;
+}
+
+.content-input {
+  height: 300px;
+}
+
+.submit-new-post-container {
+  text-align: center;
+}
+
+.content-error {
+  margin-left: 5px;
+}

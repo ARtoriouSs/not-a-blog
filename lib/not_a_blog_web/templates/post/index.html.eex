@@ -1,4 +1,7 @@
-<h1 class="my-4">Posts</h1>
+<div class="d-flex justify-content-between">
+  <h1 class="my-4">Posts</h1>
+  <%= button "New post", to: post_path(@conn, :new), method: :get, class: "mt-4" %>
+</div>
 
 <%= for post <- @posts do %>
   <div class="card mb-4">

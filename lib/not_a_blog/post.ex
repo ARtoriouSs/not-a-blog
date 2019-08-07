@@ -13,7 +13,7 @@ defmodule NotABlog.Post do
   def changeset(post, attrs) do
     post
     |> cast(attrs, [:title, :views, :content])
-    |> validate_required([:title, :views, :content])
+    |> validate_required([:title, :content])
     |> validate_length(:title, max: 200)
     |> validate_number(:views, greater_than_or_equal_to: 0)
   end
