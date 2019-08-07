@@ -1,8 +1,12 @@
 defmodule NotABlogWeb.PostView do
   use NotABlogWeb, :view
 
+  def publication_time(post) do
+    Timex.format!(post.inserted_at, "%B, %-d %Y at %-H:%M", :strftime)
+  end
+
   def content_preview(conn, post, preview_characters \\ 220) do
-    if String.length(post.content) > preview_characters do
+    if String.length(post.content) < preview_characters do
       post.content
       |> String.slice(0, preview_characters)
       |> Kernel.<>("... ")

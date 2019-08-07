@@ -36,6 +36,11 @@ h2 {
   display:inline-block;
 }
 
+hr {
+  margin: 15px 0;
+  border-top: 1px solid #eaeaea;
+}
+
 *:focus {
   outline: none;
 }

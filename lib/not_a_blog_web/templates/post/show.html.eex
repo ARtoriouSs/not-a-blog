@@ -1,1 +1,8 @@
-show post
+<h1 class="mt-4"><%= @post.title %></h1>
+<hr>
+  Posted <%= publication_time(@post) %>
+<hr>
+<div>
+  <%= @post.content %>
+</div>
+<%= button "Back", to: post_path(@conn, :index), method: :get, class: "mb-5 mt-5" %>
