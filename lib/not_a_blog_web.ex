@@ -32,13 +32,9 @@ defmodule NotABlogWeb do
       use Phoenix.View,
         root: "lib/not_a_blog_web/templates",
         namespace: NotABlogWeb
-
-      # Import convenience functions from controllers
-      import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
-
-      # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
+      import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
       import NotABlogWeb.Router.Helpers
       import NotABlogWeb.ErrorHelpers
       import NotABlogWeb.Gettext

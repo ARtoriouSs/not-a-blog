@@ -1,1 +1,17 @@
-posts
+<h1 class="my-4">Posts</h1>
+
+<%= for post <- @posts do %>
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="card-title">
+        <%= post.title %>
+      </h2>
+      <div class="card-text">
+        <%= content_preview(@conn, post) %>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      Posted on <%= post.inserted_at %>
+    </div>
+  </div>
+<% end %>
