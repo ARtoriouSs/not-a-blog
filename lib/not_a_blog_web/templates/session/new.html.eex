@@ -1,5 +1,5 @@
-<div class="wrapper fade-in-down">
-  <div id="form-content">
+<div class="login-wrapper fade-in-down">
+  <div id="login-form-content">
     <div class="fade-in first">
       <img src="<%= static_path(@conn, "/images/user.svg") %>" id="icon"></img>
     </div>
@@ -7,10 +7,10 @@
     <%= form_for :session, session_path(@conn, :create), fn form -> %>
       <%= text_input form, :name, [class: "fade-in second", placeholder: "username"] %>
       <%= text_input form, :password, [type: :password, class: "fade-in third", placeholder: "password"] %>
-      <%= submit "Log in", [class: "fade-in fourth"] %>
+      <%= submit "Log in", [class: "fade-in fourth submit-button"] %>
     <% end %>
 
-    <div id="form-footer">
+    <div id="login-form-footer">
       <a class="underline-hover" href="#">Forgot Password?</a>
     </div>
   </div>
