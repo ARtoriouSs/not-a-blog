@@ -4,8 +4,8 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Not a blog</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>"/>
+    <title>Not a blog</title>
   </head>
 
   <body>
@@ -20,9 +20,10 @@
             <% end %>
           </ul>
         </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="<%= static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
+        <h2 class="logo">
+          I don't like word "blog",<br>
+          so it's not a blog :\
+        </h2>
       </section>
     </header>
 
