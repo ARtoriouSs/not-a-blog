@@ -1,1 +1,24 @@
-edit post
+<div class="d-flex justify-content-between">
+  <h1 class="my-4">Edit post</h1>
+  <%= button "Back", to: post_path(@conn, :show, @post.id), method: :get, class: "mt-4" %>
+</div>
+
+<%= form_for @changeset, post_path(@conn, :update, @post.id), fn form -> %>
+  <label>
+    <div class="d-flex">
+      Title: <div class="content-error"><%= error_tag(form, :title) %></div>
+    </div>
+    <%= text_input form, :title, class: "title-input" %>
+  </label>
+
+  <label>
+    <div class="d-flex">
+      Content: <div class="content-error"><%= error_tag form, :content %></div>
+    </div>
+    <%= textarea form, :content, class: "content-input" %>
+  </label>
+
+  <div class="submit-new-post-container">
+    <%= submit "Update" %>
+  </div>
+<% end %>

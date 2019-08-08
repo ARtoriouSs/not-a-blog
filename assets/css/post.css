@@ -1,6 +1,7 @@
 .title-input {
   width: 99% !important;
   background-color: white !important;
+  border: 0.1rem solid #d1d1d1 !important;
 }
 
 .content-input {
