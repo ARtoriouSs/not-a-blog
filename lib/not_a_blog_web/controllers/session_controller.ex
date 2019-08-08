@@ -22,6 +22,7 @@ defmodule NotABlogWeb.SessionController do
   def delete(conn, _params) do
     conn
     |> NotABlog.Auth.logout
+    |> put_flash(:info, "Good bye")
     |> redirect(to: session_path(conn, :new))
   end
 end

@@ -10,7 +10,14 @@
 
   <body>
     <header>
-      <section class="container d-flex justify-content-around">
+      <section class="container">
+        <div>
+          <%= if logged_in?(@conn) do %>
+            <%= button "Log out", to: session_path(@conn, :delete, current_user(@conn).id), method: :delete, class: "btn btn-danger pl-4 pr-4" %>
+          <% else %>
+            <%= button "Log in", to: session_path(@conn, :new), method: :get, class: "btn btn-primary pl-4 pr-4" %>
+          <% end %>
+        </div>
         <h2 class="logo">
           I don't like word "blog",<br>
           so it's not a blog :\

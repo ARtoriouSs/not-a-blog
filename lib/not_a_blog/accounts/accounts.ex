@@ -15,11 +15,6 @@ defmodule NotABlog.Accounts do
   end
 
   def get_user(id) do
-    User
-    |> Repo.get(id)
-  end
-
-  def change_user_registration(%User{} = user) do
-    User.auth_changeset(user, %{})
+    Repo.get(User,id)
   end
 end

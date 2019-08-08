@@ -3,33 +3,47 @@ defmodule NotABlog.Auth do
 
   import Plug.Conn
 
-  alias NotABlog.Auth.Guardian
   alias Comeonin.Bcrypt
   alias NotABlog.Accounts.User
   alias NotABlog.Repo
 
-  def authenticate_user(username, given_password) do
+  @error_message "Incorrect username or password"
+
+  def authenticate_user(username, password) do
     Ecto.Query.from(user in User, where: user.name == ^username)
     |> Repo.one
-    |> check_password(given_password)
+    |> check_password(password)
   end
 
   def login(conn, user) do
     conn
-    |> Guardian.Plug.sign_in(user)
+    |> put_session(:user_id, user.id)
     |> assign(:current_user, user)
   end
 
   def logout(conn) do
-    Guardian.Plug.sign_out(conn)
+    conn
+    |> put_session(:user_id, nil)
+    |> assign(:current_user, nil)
   end
 
-  defp check_password(nil, _given_password), do: {:error, "Incorrect username or password"}
+  def current_user(conn) do
+    case get_session(conn, :user_id) do
+      nil -> nil
+      id  -> Repo.get(User, id)
+    end
+  end
 
-  defp check_password(user, given_password) do
-    case Bcrypt.checkpw(given_password, user.password_hash) do
+  def logged_in?(conn) do
+    !!current_user(conn)
+  end
+
+  defp check_password(nil, _given_password), do: {:error, @error_message}
+
+  defp check_password(user, password) do
+    case Bcrypt.checkpw(password, user.password_hash) do
       true -> {:ok, user}
-      false -> {:error, "Incorrect username or password"}
+      false -> {:error, @error_message}
     end
   end
 end
