@@ -10,16 +10,7 @@
 
   <body>
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <%= if logged_in?(@conn) do %>
-              <%= link "Log out", to: session_path(@conn, :delete, current_user(@conn).id), method: :delete %>
-            <% else %>
-              <%= link "Log in", to: session_path(@conn, :new) %>
-            <% end %>
-          </ul>
-        </nav>
+      <section class="container d-flex justify-content-around">
         <h2 class="logo">
           I don't like word "blog",<br>
           so it's not a blog :\

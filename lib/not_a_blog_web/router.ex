@@ -18,6 +18,9 @@ defmodule NotABlogWeb.Router do
 
     resources("/sessions", SessionController, only: [:new, :create, :delete])
 
+    get "/", PostController, :index
+    get "/login", SessionController, :new
+
     scope "/posts" do
       pipe_through :authentication_check
       resources "/", PostController, except: [:index, :show]

@@ -15,7 +15,7 @@ defmodule NotABlogWeb.PostController do
   end
 
   def new(conn, _params) do
-    render(conn, "new.html", changeset: empty_post)
+    render(conn, "new.html", changeset: Post.changeset(%Post{}, %{}))
   end
 
   def edit(conn, %{"id" => id} = _params) do
@@ -52,15 +52,11 @@ defmodule NotABlogWeb.PostController do
       {:ok, _struct} ->
         conn
         |> put_flash(:info, "Post successfully deleted")
-        |> redirect to: post_path(conn, :index)
+        |> redirect(to: post_path(conn, :index))
       {:error, _changeset} ->
         conn
         |> put_flash(:error, "Something went wrong")
-        |> redirect to: post_path(conn, :index)
+        |> redirect(to: post_path(conn, :index))
     end
-  end
-
-  defp empty_post do
-    Post.changeset(%Post{}, %{})
   end
 end

@@ -24,18 +24,6 @@ defmodule NotABlog.Auth do
     Guardian.Plug.sign_out(conn)
   end
 
-  def load_current_user(conn) do
-    assign(conn, :current_user, current_user(conn))
-  end
-
-  def current_user(conn) do
-    Guardian.Plug.current_resource(conn)
-  end
-
-  def logged_in?(conn) do
-    !!current_user(conn)
-  end
-
   defp check_password(nil, _given_password), do: {:error, "Incorrect username or password"}
 
   defp check_password(user, given_password) do

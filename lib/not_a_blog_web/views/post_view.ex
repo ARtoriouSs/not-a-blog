@@ -20,7 +20,7 @@ defmodule NotABlogWeb.PostView do
     end
   end
 
-  defp show_post_link(conn, post, text \\ "Read more") do
+  defp show_post_link(conn, post, text) do
     link(text, to: post_path(conn, :show, post.id))
     |> Phoenix.HTML.Safe.to_iodata
     |> IO.chardata_to_string
