@@ -1,20 +1,28 @@
 # NotABlog
 
-To start your Phoenix server:
+*NotABlog* is a simple RESTful blog on Phoenix.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+## Install
+
+```bash
+git clone https://github.com/ARtoriouSs/not-a-blog.git
+cd not-a-blog
+mix deps.get
+mix ecto.setup
+mix run priv/repo/seeds.exs
+```
+
+## Run
+
+First you need to set secret key base:
+```
+export SECRET_KEY_BASE=SECRET_KEY_BASE=SAMPLESAMPLESAMPLESAMPLESAMPLESAMPLESAMPLESAMPLESAMPLESAMPLESAMP
+```
+Or create .env file, add key to it and just `source .env`
+
+Then run server:
+```bash
+mix phx.server
+```
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
