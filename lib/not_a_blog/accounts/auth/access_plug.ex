@@ -1,7 +1,7 @@
 defmodule NotABlog.Auth.AccessPlug do
   import Plug.Conn
   import Phoenix.Controller
-  import NotABlogWeb.Router.Helpers
+  alias NotABlogWeb.Router.Helpers, as: Routes
 
   def init(opts), do: opts
 
@@ -10,7 +10,7 @@ defmodule NotABlog.Auth.AccessPlug do
       nil ->
         conn
         |> put_flash(:error, "You need to log in to do it")
-        |> redirect(to: session_path(conn, :new))
+        |> redirect(to: Routes.session_path(conn, :new))
         |> halt()
       id -> conn
     end
