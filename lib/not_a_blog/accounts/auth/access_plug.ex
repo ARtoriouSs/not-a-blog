@@ -9,7 +9,7 @@ defmodule NotABlog.Auth.AccessPlug do
     case get_session(conn, :user_id) do
       nil ->
         conn
-        |> put_flash(:error, "You need to log in")
+        |> put_flash(:error, "You need to log in to do it")
         |> redirect(to: session_path(conn, :new))
         |> halt()
       id -> conn

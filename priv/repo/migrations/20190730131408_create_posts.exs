@@ -5,7 +5,7 @@ defmodule NotABlog.Repo.Migrations.CreatePosts do
     create table(:posts) do
       add :title, :string
       add :views, :integer, default: 0
-      add :content, :string
+      add :content, :text
 
       timestamps()
     end
