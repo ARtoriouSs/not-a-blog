@@ -11,6 +11,9 @@ defmodule NotABlogWeb.PostController do
 
   def show(conn, %{"id" => id} = _params) do
     post = Repo.get(Post, id)
+    post
+    |> Post.changeset(%{views: post.views + 1})
+    |> Repo.update()
     render(conn, "show.html", post: post)
   end
 

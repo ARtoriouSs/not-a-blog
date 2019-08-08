@@ -6,7 +6,16 @@
   </div>
 </div>
 
-<hr>Posted <%= publication_time(@post) %><hr>
+<hr>
+<div class="text-muted d-flex justify-content-between">
+  <div>
+    Posted <%= publication_time(@post) %>
+  </div>
+  <div class="post-views">
+    Views: <%= @post.views %>
+  </div>
+</div>
+<hr>
 <div><%= @post.content %></div>
 
 <%= button "Back", to: post_path(@conn, :index), method: :get, class: "mb-5 mt-5" %>

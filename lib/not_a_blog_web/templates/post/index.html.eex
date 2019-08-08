@@ -13,8 +13,13 @@
         <%= content_preview(@conn, post) %>
       </div>
     </div>
-    <div class="card-footer text-muted">
-      Posted <%= publication_time(post) %>
+    <div class="card-footer text-muted d-flex justify-content-between">
+      <div>
+        Posted <%= publication_time(post) %>
+      </div>
+      <div class="post-views">
+        Views: <%= post.views %>
+      </div>
     </div>
   </div>
 <% end %>

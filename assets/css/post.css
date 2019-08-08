@@ -15,3 +15,8 @@
 .content-error {
   margin-left: 5px;
 }
+
+.post-views {
+  padding: 0 15px;
+  border-left: 1px solid #d1d1d1;
+}
