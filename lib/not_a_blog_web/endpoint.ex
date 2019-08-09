@@ -2,7 +2,7 @@ defmodule NotABlogWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :not_a_blog
 
   socket "/socket", NotABlogWeb.UserSocket,
-    websocket: true,
+    websocket: false,
     longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
