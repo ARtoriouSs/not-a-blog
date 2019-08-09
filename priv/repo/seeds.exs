@@ -19,5 +19,3 @@ Repo.insert! %Post{
 }
 
 Repo.insert! %Post{ title: "Little post", content: "I'm a little post."}
-
-IO.puts("Database successfully seeded")
