@@ -16,10 +16,11 @@ defmodule NotABlogWeb.Router do
   scope "/", NotABlogWeb do
     pipe_through [:browser]
 
-    resources("/sessions", SessionController, only: [:new, :create, :delete])
-
     get "/", PostController, :index
     get "/login", SessionController, :new
+    get "/forgot_password", StaticPageController, :forgot_password
+
+    resources("/sessions", SessionController, only: [:new, :create, :delete])
 
     scope "/posts" do
       pipe_through :ensure_authorized

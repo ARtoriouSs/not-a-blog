@@ -11,7 +11,7 @@
     <% end %>
 
     <div id="login-form-footer">
-      <a class="underline-hover" href="#">Forgot Password?</a>
+      <%= link "Forgot Password?", to: static_page_path(@conn, :forgot_password), class: "underline-hover" %>
     </div>
   </div>
 </div>

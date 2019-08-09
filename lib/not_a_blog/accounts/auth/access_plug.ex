@@ -12,7 +12,7 @@ defmodule NotABlog.Auth.AccessPlug do
         |> put_flash(:error, "You need to log in to do it")
         |> redirect(to: Routes.session_path(conn, :new))
         |> halt()
-      id -> conn
+      _id -> conn
     end
   end
 end

@@ -13,6 +13,7 @@
       <section class="container">
         <div>
           <%= if logged_in?(@conn) do %>
+            <%= button "Account settings", to: session_path(@conn, :delete, current_user(@conn).id), method: :delete, class: "btn btn-primary pl-4 pr-4" %>
             <%= button "Log out", to: session_path(@conn, :delete, current_user(@conn).id), method: :delete, class: "btn btn-danger pl-4 pr-4" %>
           <% else %>
             <%= button "Log in", to: session_path(@conn, :new), method: :get, class: "btn btn-primary pl-4 pr-4" %>

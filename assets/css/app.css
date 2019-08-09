@@ -3,6 +3,7 @@
 @import "./phoenix.css";
 @import "./post.css";
 @import "./session.css";
+@import "./static_page.css";
 
 html, body {
   height: 100%;
@@ -53,6 +54,10 @@ h2.active {
 hr {
   margin: 15px 0;
   border-top: 1px solid #eaeaea;
+}
+
+button {
+  font-weight: bold !important;
 }
 
 *:focus {
