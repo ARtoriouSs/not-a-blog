@@ -19,7 +19,7 @@ footer {
 }
 
 a {
-  display:inline-block;
+  display: inline-block;
   text-decoration: none;
   font-weight: 400;
 }
@@ -96,4 +96,8 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 .logo {
   font-size: 25pt;
   margin: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
 }

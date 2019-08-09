@@ -18,10 +18,10 @@
             <%= button "Log in", to: session_path(@conn, :new), method: :get, class: "btn btn-primary pl-4 pr-4" %>
           <% end %>
         </div>
-        <h2 class="logo">
+        <%= link to: post_path(@conn, :index), class: "logo" do %>
           I don't like word "blog",<br>
           so it's not a blog :\
-        </h2>
+        <% end %>
       </section>
     </header>
 
