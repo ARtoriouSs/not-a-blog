@@ -1,4 +1,4 @@
-defmodule NotABlog.Post do
+defmodule NotABlog.Blog.Post do
   use Ecto.Schema
   import Ecto.Changeset
 

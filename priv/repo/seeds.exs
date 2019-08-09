@@ -1,7 +1,7 @@
 
 alias NotABlog.Repo
 alias NotABlog.Accounts.User
-alias NotABlog.Post
+alias NotABlog.Blog.Post
 
 admin = User.auth_changeset(%User{}, %{name: "Admin", password: "foobar"})
 
