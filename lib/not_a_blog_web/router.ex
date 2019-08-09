@@ -27,6 +27,14 @@ defmodule NotABlogWeb.Router do
       resources "/", PostController, except: [:index, :show]
     end
 
+    scope "/users" do
+      pipe_through :ensure_authorized
+      resources("/", UserController, only: [:edit, :update])
+      get "/reset_password/:id", UserController, :reset_password
+      post "/reset_password/:id", UserController, :update_password
+      put "/reset_password/:id", UserController, :update_password
+    end
+
     scope "/posts" do
       resources("/", PostController, only: [:index, :show])
     end

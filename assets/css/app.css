@@ -4,6 +4,7 @@
 @import "./post.css";
 @import "./session.css";
 @import "./static_page.css";
+@import "./user.css";
 
 html, body {
   height: 100%;
@@ -105,4 +106,13 @@ input[type=text]:placeholder, input[type=password]:placeholder {
   text-decoration: none;
   text-transform: uppercase;
   color: black;
+}
+
+.field-error {
+  margin-left: 5px;
+}
+
+.input {
+  background-color: white !important;
+  border: 0.1rem solid #d1d1d1 !important;
 }

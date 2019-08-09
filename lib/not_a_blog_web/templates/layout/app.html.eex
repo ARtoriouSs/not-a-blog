@@ -9,32 +9,13 @@
   </head>
 
   <body>
-    <header>
-      <section class="container">
-        <div>
-          <%= if logged_in?(@conn) do %>
-            <%= button "Account settings", to: session_path(@conn, :delete, current_user(@conn).id), method: :delete, class: "btn btn-primary pl-4 pr-4" %>
-            <%= button "Log out", to: session_path(@conn, :delete, current_user(@conn).id), method: :delete, class: "btn btn-danger pl-4 pr-4" %>
-          <% else %>
-            <%= button "Log in", to: session_path(@conn, :new), method: :get, class: "btn btn-primary pl-4 pr-4" %>
-          <% end %>
-        </div>
-        <%= link to: post_path(@conn, :index), class: "logo" do %>
-          I don't like word "blog",<br>
-          so it's not a blog :\
-        <% end %>
-      </section>
-    </header>
-
+    <%= render "header.html", conn: @conn %>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
     </main>
-
-    <footer class="pt-4">
-      <%= render "footer.html" %>
-    </footer>
+    <%= render "footer.html" %>
 
     <script type="text/javascript" src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

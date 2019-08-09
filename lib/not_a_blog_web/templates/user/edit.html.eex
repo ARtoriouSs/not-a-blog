@@ -1,0 +1,13 @@
+<%= form_for @changeset, user_path(@conn, :update, @user.id), fn form -> %>
+  <label>
+    <div class="d-flex">
+      Your name <div class="field-error"><%= error_tag(form, :name) %></div>
+    </div>
+    <%= text_input form, :name, class: "input user-name-input" %>
+  </label>
+
+  <div class="submit-new-post-container">
+    <%= submit "Change name" %>
+    <%= button "Reset password", to: user_path(@conn, :reset_password, @user.id), method: :get %>
+  </div>
+<% end %>
