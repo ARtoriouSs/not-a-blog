@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between">
-  <h1 class="my-4"><%= @post.title %></h1>
+  <h1 class="my-4"><%= raw(@post.title) %></h1>
   <div>
     <%= button "Edit", to: post_path(@conn, :edit, @post.id), method: :get, class: "mt-4" %>
     <%= button "Delete", to: post_path(@conn, :delete, @post.id), method: :delete, class: "mt-4" %>
@@ -16,6 +16,6 @@
   </div>
 </div>
 <hr>
-<div><%= @post.content %></div>
+<div><%= raw(@post.content) %></div>
 
 <%= button "Back", to: post_path(@conn, :index), method: :get, class: "mb-5 mt-5" %>
