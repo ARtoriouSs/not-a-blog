@@ -5,6 +5,7 @@
 @import "./session.css";
 @import "./static_page.css";
 @import "./user.css";
+@import "./error.css";
 
 html, body {
   height: 100%;
