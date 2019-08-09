@@ -18,4 +18,6 @@ Repo.insert! %Post{
   """
 }
 
-Repo.insert! %Post{ title: "Little post", content: "I'm a little post."}
+for n <- 1..10 do
+  Repo.insert! %Post{ title: "Little post №#{n}", content: "I'm a little post №#{n}."}
+end
