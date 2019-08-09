@@ -1,10 +1,8 @@
-
 alias NotABlog.Repo
 alias NotABlog.Accounts.User
 alias NotABlog.Blog.Post
 
-admin = User.auth_changeset(%User{}, %{name: "Admin", password: "foobar"})
-
+admin = User.auth_changeset(%User{}, %{name: "admin", password: "foobar"})
 Repo.insert! admin
 
 Repo.insert! %Post{
@@ -20,7 +18,6 @@ Repo.insert! %Post{
   """
 }
 
-Repo.insert! %Post{
-  title: "Little post",
-  content: "I'm a little post."
-}
+Repo.insert! %Post{ title: "Little post", content: "I'm a little post."}
+
+IO.puts("Database successfully seeded")
