@@ -7,18 +7,29 @@
 @import "./user.css";
 @import "./error.css";
 
-html, body {
-  height: 100%;
+html {
+  height:100%;
+}
+
+body {
+  min-height: 100%;
+  padding: 0;
   margin: 0;
-}
-
-main {
-  max-height: 63%;
-}
-
-footer {
-  border-top: 1px solid #eaeaea;
   position: relative;
+}
+
+body::after {
+  content:'';
+  display:block;
+  height: 182px;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 182px;
+  border-top: 1px solid #eaeaea;
 }
 
 a {
