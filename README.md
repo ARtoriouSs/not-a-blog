@@ -1,6 +1,6 @@
 # NotABlog
 
-**NotABlog** is a simple RESTful blog on Phoenix. I don't like word "blog", so it's not a blog.
+**NotABlog** is a simple RESTful blog on Phoenix. I don't like word "blog", so it's not a blog. It's just sample application to learn Elixir, but you can check it out [here](https://not-a-blog.herokuapp.com/ "NotABlog on Heroku") (Heroku puts to sleep free dynos if they are inactive for some time, so it will take some time to start up, and can throw 500. Just update the page).
 
 ## Install
 
