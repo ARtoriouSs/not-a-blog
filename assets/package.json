@@ -1,5 +1,9 @@
 {
-  "repository": {},
+  "name": "not-a-blog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ARtoriouSs/not-a-blog.git"
+  },
   "license": "MIT",
   "scripts": {
     "deploy": "webpack --mode production",
