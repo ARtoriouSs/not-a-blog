@@ -1,4 +1,12 @@
 .big-boy {
+  display: flex;
+  justify-content: space-around;
   font-weight: bold;
   font-size: 120pt;
+}
+
+@media only screen and (max-width: 600px) {
+  .big-boy {
+    font-size: 45pt;
+  }
 }

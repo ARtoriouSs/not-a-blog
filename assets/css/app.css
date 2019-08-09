@@ -13,7 +13,7 @@ html, body {
 }
 
 main {
-  min-height: 63%;
+  max-height: 63%;
 }
 
 footer {
@@ -116,4 +116,19 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 .input {
   background-color: white !important;
   border: 0.1rem solid #d1d1d1 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    text-align: center;
+    font-size: 18pt;
+  }
+
+  .copyright-content {
+    font-size: 10pt;
+  }
+
+  .profile, .social {
+    margin-bottom: 37px !important;
+  }
 }
