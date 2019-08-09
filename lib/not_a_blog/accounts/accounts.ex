@@ -7,14 +7,4 @@ defmodule NotABlog.Accounts do
   def list_users do
     Repo.all(User)
   end
-
-  def create_user(attributes \\ %{}) do
-    %User{}
-    |> User.auth_changeset(attributes)
-    |> Repo.insert()
-  end
-
-  def get_user(id) do
-    Repo.get(User,id)
-  end
 end
