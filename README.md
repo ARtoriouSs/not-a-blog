@@ -18,6 +18,12 @@ Setup database:
 mix ecto.setup
 mix run priv/repo/seeds.exs
 ```
+Install assets:
+```bash
+cd assets
+npm install
+cd ..
+```
 
 ## Run
 
