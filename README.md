@@ -41,4 +41,4 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Deploy
 
-Unfortunately this app isn't use any cool Elixir features :( But this makes it possible to deploy it to Heroku witout any limitations. To do it just follow [Phoenix deployment guides](https://hexdocs.pm/phoenix/heroku.html "Heroku deployment").
+Unfortunately this app don't use any cool Elixir features :( But this makes it possible to deploy it to Heroku witout any limitations. To do it just follow [Phoenix deployment guides](https://hexdocs.pm/phoenix/heroku.html "Heroku deployment").
